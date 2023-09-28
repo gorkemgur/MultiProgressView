@@ -120,14 +120,7 @@ open class MultiProgressView: UIView, ProgressViewSectionDelegate {
         }
     }
     
-    public var totalProgress: Float {
-        get {
-            return currentProgress.reduce(0) { $0 + $1 }
-        }
-        set(value) {
-            self.totalProgress = value
-        }
-    }
+    public var totalProgress: Float = 0
     
     lazy var track: UIView = {
         let view = UIView()
@@ -244,9 +237,8 @@ open class MultiProgressView: UIView, ProgressViewSectionDelegate {
     }
     
     // MARK: - Main Methods
-    
     public func setProgress(section: Int, to progress: Float) {
-        currentProgress[section] = max(0, min(progress, 1 - totalProgress + currentProgress[section]))
+        currentProgress[section] = progress / totalProgress
         setNeedsLayout()
         layoutIfNeeded()
     }

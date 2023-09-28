@@ -53,6 +53,8 @@ class LanguageExampleViewController: UIViewController {
     for progressView in progressViews {
       progressView.shouldHideTitle(false)
     }
+      
+      self.progressView.totalProgress = 680
 
     animateSetProgress(progressView1, firstProgress: 0.45, secondProgress: 0.15)
     animateSetProgress(progressView2, firstProgress: 0.2, secondProgress: 0.20)

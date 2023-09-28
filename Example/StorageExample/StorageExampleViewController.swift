@@ -182,19 +182,20 @@ class StorageExampleViewController: UIViewController {
   }
 
   private func animateProgress() {
+      self.progressView.totalProgress = 680
     UIView.animate(withDuration: 0.4,
                    delay: 0,
                    usingSpringWithDamping: 0.6,
                    initialSpringVelocity: 0,
                    options: .curveLinear,
                    animations: {
-                    self.progressView.setProgress(section: 0, to: 0.4)
-                    self.progressView.setProgress(section: 1, to: 0.15)
-                    self.progressView.setProgress(section: 2, to: 0.1)
-                    self.progressView.setProgress(section: 3, to: 0.1)
-                    self.progressView.setProgress(section: 4, to: 0.05)
-                    self.progressView.setProgress(section: 5, to: 0.03)
-                    self.progressView.setProgress(section: 6, to: 0.03)
+                    self.progressView.setProgress(section: 0, to: 500)
+                    self.progressView.setProgress(section: 1, to: 120)
+                    self.progressView.setProgress(section: 2, to: 40)
+                    self.progressView.setProgress(section: 3, to: 1)
+                    self.progressView.setProgress(section: 4, to: 6)
+                    self.progressView.setProgress(section: 5, to: 7)
+                    self.progressView.setProgress(section: 6, to: 8)
     })
     dataUsedLabel.text = "56.5 GB of 64 GB Used"
   }
